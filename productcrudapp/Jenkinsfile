@@ -4,6 +4,10 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
         IMAGE_NAME = "abhishek7380/my-java-webapp"
     }
+    docker {
+            image 'maven:3.8.5-jdk-11'
+            args '-v /root/.m2:/root/.m2' // Optional: To cache Maven dependencies
+        }
     stages {
         stage('Clone Repository') {
             steps {
