@@ -4,9 +4,9 @@ FROM maven:3.8.5-openjdk-11 AS builder
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the Maven project files
-COPY pom.xml .
-COPY src ./src
+# Copy the Maven project files from the subdirectory
+COPY productcrudapp/pom.xml .
+COPY productcrudapp/src ./src
 
 # Build the project, which generates the .war file
 RUN mvn clean package
