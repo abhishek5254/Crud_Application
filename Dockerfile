@@ -21,4 +21,4 @@ RUN rm -rf /usr/local/tomcat/webapps/ROOT
 COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose the default Tomcat port
-EXPOSE 8080
+EXPOSE 8081
